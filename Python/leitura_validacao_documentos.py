@@ -180,6 +180,7 @@ def analisar_documento_s3(url):
         return response
 
 
+
     elif ext == "docx":
         pdf_path = docx_to_pdf_from_url_word(
             url,
@@ -200,7 +201,16 @@ def analisar_documento_s3(url):
             ]
         )
 
+        # APAGAR O PDF GERADO APÓS O USO
+        try:
+            os.remove(pdf_path)
+        except Exception as e:
+            print("Erro ao apagar DocumentoTransformado.pdf:", e)
+
         return response
+
+
+       
 
    
 
@@ -223,7 +233,6 @@ def analisar_documento_s3(url):
 
         return response
 
- 
 
 
     else:
@@ -236,5 +245,7 @@ def analisar_documento_s3(url):
 
 
 
-url = "https://ged-anchieta.s3.amazonaws.com/GED/Documentos/26032443CPF.jpg"
+
+
+url = "https://ged-anchieta.s3.amazonaws.com/GED/Documentos/25112667rgecpf.docx"
 print(analisar_documento_s3(url))
