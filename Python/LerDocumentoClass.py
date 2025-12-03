@@ -9,7 +9,7 @@ import json
 
 class Gemini():
     def __init__(self):
-        self.client = genai.Client(api_key="AIzaSyAOX8LzTFUQ0VhUCJz-JVDX3zbmuvDrkWA")
+        self.client = genai.Client(api_key="teste")
         
         self.prompt = """
             Você é um extrator de dados de documentos brasileiros a partir de PDFs e imagens (scans de documentos físicos).

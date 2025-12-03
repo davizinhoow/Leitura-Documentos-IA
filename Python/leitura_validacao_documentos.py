@@ -9,7 +9,7 @@ from google.genai import types
 
 
 
-client = genai.Client(api_key="AIzaSyARFkkSRjtqCkkoeUKki1mYhNJ9CwlUlLo")
+client = genai.Client(api_key="teste")
 
 prompt = """
 Você é um extrator de dados de documentos brasileiros a partir de PDFs e imagens (scans de documentos físicos).
